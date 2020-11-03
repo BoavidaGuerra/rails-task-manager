@@ -1,18 +1,6 @@
 <h1>New Task</h1>
 
-<%= form_for @task do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: 'Task title', class: ''%>
-  </div>
-
-  <div>
-    <%= f.label :details %>
-    <%= f.text_field :details %>
-  </div>
-
-  <%= f.submit %>
-<% end %>
+<%= render 'form', task: @task %>
 
 <section class="actions">
   <%= link_to '⎋ Back to list', tasks_path %>

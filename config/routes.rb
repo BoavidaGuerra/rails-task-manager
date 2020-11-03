@@ -5,22 +5,25 @@ Rails.application.routes.draw do
 
   # Create
   # 1. GET the task creation form = 1 request
-  get 'tasks/new', to: 'tasks#new'
-  # 2. POST the parameters to create a new task = 1 request
-  post 'tasks', to: 'tasks#create'
+  # get 'tasks/new', to: 'tasks#new'
+  # # 2. POST the parameters to create a new task = 1 request
+  # post 'tasks', to: 'tasks#create'
 
-  # Read
-  # All
-  get 'tasks', to: 'tasks#index'
-  # One
-  get 'tasks/:id', to: 'tasks#show', as: :task
+  # # Read
+  # # All
+  # get 'tasks', to: 'tasks#index'
+  # # One
+  # get 'tasks/:id', to: 'tasks#show', as: :task
 
-  # Update
-  # 1. GET the task update form = 1 request
-  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
-  # 2. PATCH parameters to update an existing task = 1 request
-  patch 'tasks/:id', to: 'tasks#update'
+  # # Update
+  # # 1. GET the task update form = 1 request
+  # get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
+  # # 2. PATCH parameters to update an existing task = 1 request
+  # patch 'tasks/:id', to: 'tasks#update'
 
-  # Delete
-  delete 'tasks/:id', to: 'tasks#destroy'
+  # # Delete
+  # delete 'tasks/:id', to: 'tasks#destroy'
+
+  # Generates the 7 CRUD routes!
+  resources :tasks
 end
