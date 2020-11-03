@@ -3,17 +3,17 @@ Rails.application.routes.draw do
   # verb 'path', to: 'controller#action'
   # RULE!!!! cant have the same path for same verb
 
-  # Read
-  # All
-  get 'tasks', to: 'tasks#index'
-  # One
-  get 'tasks/:id', to: 'tasks#show', as: :task
-
   # Create
   # 1. GET the task creation form = 1 request
   get 'tasks/new', to: 'tasks#new'
   # 2. POST the parameters to create a new task = 1 request
   post 'tasks', to: 'tasks#create'
+
+  # Read
+  # All
+  get 'tasks', to: 'tasks#index'
+  # One
+  get 'tasks/:id', to: 'tasks#show', as: :task
 
   # Update
   # 1. GET the task update form = 1 request

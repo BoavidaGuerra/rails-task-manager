@@ -1,7 +1,14 @@
 <h1>My tasks</h1>
+<section class="tasks-list">
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task.completed ? '☑️' : '🔳' %> <%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  </ul>
+</section>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task.completed ? '☑️' : '🔳' %> <%= link_to task.title, task_path(task) %></li>
-  <% end %>
-</ul>
+<section class="actions">
+  <ul>
+    <li><%= link_to '＋ Add a New Task', tasks_new_path %></li>
+  </ul>
+</section>

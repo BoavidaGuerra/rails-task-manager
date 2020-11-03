@@ -5,7 +5,11 @@
 </div>
 
 <p>
-  <%= @task.completed ? '☑️ This task is completed' : '🔳 This taks is not completed yet' %>
+  <%= @task.completed ? '☑️ This task is completed' : '🔳 This task is not completed yet' %>
 </p>
-<%= link_to 'Back to list', tasks_path %>
 
+<section class="actions">
+  <ul>
+    <li><%= link_to '⎋ Back to list', tasks_path %></li>
+  </ul>
+</section>
