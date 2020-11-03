@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
   attr_reader :show, :edit
 
   # R EAD
@@ -34,6 +34,13 @@ class TasksController < ApplicationController
     # set_task was already triggered by before_action
     @task.update(task_params)
     @task.save
+
+    redirect_to tasks_path
+  end
+
+  def destroy
+    # set_task was already triggered by before_action
+    @task.destroy
 
     redirect_to tasks_path
   end

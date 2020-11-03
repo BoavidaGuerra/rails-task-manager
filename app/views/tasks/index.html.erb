@@ -2,7 +2,7 @@
 <section class="tasks-list">
   <ul>
     <% @tasks.each do |task| %>
-      <li><%= task.completed ? '☑️' : '🔳' %> <%= link_to task.title, task_path(task) %></li>
+      <li><%= task.completed ? '☑️' : '🔳' %> <%= link_to task.title, task_path(task) %><%= link_to "🗑️", task_path(task), method: :delete, data: { confirm: "Delete #{task.title}" } %></li>
     <% end %>
   </ul>
 </section>
