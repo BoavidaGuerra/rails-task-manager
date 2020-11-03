@@ -1,0 +1,11 @@
+<h1>My <%= @task.title %></h1>
+
+<div>
+  <p><%= @task.details %></p>
+</div>
+
+<p>
+  <%= @task.completed ? '☑️ This task is completed' : '🔳 This taks is not completed yet' %>
+</p>
+<%= link_to 'Back to list', tasks_path %>
+
