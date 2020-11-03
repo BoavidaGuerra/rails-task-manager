@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show]
+  before_action :set_task, only: [:show, :edit, :update]
+  attr_reader :show, :edit
 
   # R EAD
   # GET /tasks
@@ -8,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/:id
-  attr_reader :show
   # def show
   # end
 
@@ -27,10 +27,21 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  # def edit
+  # end
+
+  def update
+    # set_task was already triggered by before_action
+    @task.update(task_params)
+    @task.save
+
+    redirect_to tasks_path
+  end
+
   private
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 
   def set_task

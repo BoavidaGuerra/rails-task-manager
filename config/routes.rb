@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   # Update
   # 1. GET the task update form = 1 request
-  get 'tasks/:id/edit', to: 'tasks#edit'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
   # 2. PATCH parameters to update an existing task = 1 request
   patch 'tasks/:id', to: 'tasks#update'
 
